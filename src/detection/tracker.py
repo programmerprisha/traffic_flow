@@ -97,7 +97,7 @@ class Tracker:
                 detections[i]['track_id'] = track_id
     
 
-        for track_id in self.tracks.items():
+        for track_id, track in self.tracks.items():
             if len(track['positions']) >= 3: 
                 positions = list(track['positions'])
 
