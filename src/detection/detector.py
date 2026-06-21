@@ -13,7 +13,7 @@ class VehicleDetector:
         self.vehicle_classes = [2, 5, 7, 3]
 
     def detect(self, frame: np.ndarray) -> List[Dict]: 
-        ## prisha note = detecting objects in the frame
+        ## prisha note = detecting objects in the frame, processes and returns objects containing coordinates
         result = self.model(frame, conf=self.conf_threshold, classes=self.vehicle_classes, verbose=False)
 
         detections = []
