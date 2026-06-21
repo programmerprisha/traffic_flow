@@ -28,7 +28,7 @@ def get_first_frame(video_path):
 
 
 def draw_state(base_img, zones, current_zone, current_index, zone_names): 
-        display = base_img.copy()
+    display = base_img.copy()
 
     # prisha note = draw all zones
     for i, (name, pts) in enumerate(zones.items()):
@@ -52,7 +52,7 @@ def draw_state(base_img, zones, current_zone, current_index, zone_names):
                 cv2.line(display, current_zone[-1], current_zone[0], color, 1)
         if current_index < len(zone_names): 
             zone_name = zone_names[current_index]
-        else 
+        else:
             zone_name = f"Zone {current_index + 1}"
             instructions = [f"Drawing: '{zone_name}' (zone {current_index + 1})", "Left click = add point | N = finish zone | U = unbdo last point | Q = quit and save", f"Points so far: {len(current_zone)} (need at least 3)"]
 
@@ -104,7 +104,7 @@ def main():
                     current_index[0] += 1
                     cv2.imshow("Define Zones", draw_state(frame, zones, current_zone, current_index[0], zone_names))
                     if current_index[0] >= num_zones:
-                        print("All zones defined!! Yayy!)
+                        print("All zones defined!! Yayy!")
                         break
 
                 elif key == ord('u'):
